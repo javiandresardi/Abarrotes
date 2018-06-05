@@ -1,0 +1,24 @@
+<div>
+  <h2>Carrito de compras</h2>
+</div>
+<div class="row" *ngIf="carritoJSON.length > 0">
+  <div class="col-sm-6">
+    <ul class="list-group carritoListDiv">
+      <li class="list-group-item" *ngFor="let carrito of carritoJSON">
+          <div class="productDetails">
+            <img class="card-img-top" [src]="carrito.producto.img" alt="Card image cap" width="10%" height="10%">
+            <div class="productText">
+              <p>{{carrito.producto.nombre}}</p>
+              <p><strong>Unidades: </strong>{{carrito.quantity}}</p>
+            </div>
+          </div>
+          <p><strong>Subtotal: </strong>{{carrito.subtotal}}$</p>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-6">
+    <h2>Total: {{dataService.carritoTotal}} $</h2>
+    <a type="button" class="btn btn-default" routerLink="/home/catalogo">Cancelar</a>
+    <a type="button" class="btn btn-default" (click)="updateProductosStock()">Pagar</a>
+  </div>
+</div>

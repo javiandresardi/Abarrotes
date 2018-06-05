@@ -1,0 +1,9 @@
+body{
+background-image: url("../../img/login-fondo.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 70em;
+color: white;
+margin-bottom: 0;
+}
